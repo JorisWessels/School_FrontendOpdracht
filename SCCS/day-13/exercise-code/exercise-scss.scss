@@ -1,0 +1,24 @@
+@each
+$network, $color, $text in
+                (twitter, #58ABEC, "Volg mij op Twitter"),
+                (facebook, #3E578D, "Volg mij op Facebook"),
+                (email, #96CC6B, "Email mij") {
+  #social-#{$network} {
+    background: url("images/icon-social-#{$network}.png");
+    color: $color;
+
+    &:before {
+      content: $text;
+    }
+  }
+}
+
+$counter: 10;
+
+@while $counter > 0 {
+  .element-#{$counter} {
+    height: 2.5em * $counter;
+  }
+
+  $counter: $counter - 2;
+}
